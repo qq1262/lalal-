@@ -1,0 +1,138 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void rank(struct p w[100],int r);				//储存信息数组
+ struct p
+ {
+ char name[20];
+ int defen;
+ }
+ int chengji[100];
+
+
+void menu()	
+{															//菜单
+	
+	printf("|1.对 战 模 式|");
+	printf("|             |");
+	printf("|2.排行榜|");
+	 
+}
+void main()
+
+{	int i,j;
+	scanf("%d",&i);
+	 if (i=1)
+		 goto b;																//记录输出排行
+	 else {
+		 for(j=0;j<=5;j++)
+			 printf("姓名\t胜局\t总盘数\n");
+		printf("\\\t%d\\t%s\\t%d",i,chengji[i].name,chengji[i].defen);
+	 }
+{//
+	int F1,F2,sw;																//五盘三胜开始
+	int score1=0,score2=0,count=0;
+	srand(time(NULL));
+
+	{///
+		a:
+	{printf("***************************************\n");
+		printf("是否开始或继续游戏?\n\n\n");
+		printf("任意数字继续,结束按0\n");
+			scanf("%d",&sw);
+			while(sw=0) {printf("游戏结束!\n");
+		
+			break;}
+			printf("***************************************\n");}
+b:{
+		if(count!=5)
+		{//((
+		printf("请选择你要出的拳\n\n\n");
+		printf("剪刀(0), 石头(1)，布(2)\n");
+		scanf("%d",&F1);
+			printf("***************************************\n");
+		
+		{////	
+			
+			F2=rand()%3;
+			{/////
+				if(F1==0)
+				{  
+					{printf("你出的是剪刀\n");
+					count+=1;}
+					
+					if(F2==0){				//电脑出剪刀					
+						printf("你和电脑打平了\n");goto a;
+						}
+					else if(F2==1){
+						printf("你输了!\n");goto a;
+						}
+					else{ 
+						printf("你赢了!\n");
+						score1+=1;goto a;
+						}
+				}
+				else if(F1==1)
+				{			//人出石头
+					{printf("你出的是石头\n");
+					count+=1;}
+					
+					if(F2==0){			//电脑出剪刀					
+						printf("你赢了!\n");
+						score1+=1;goto a;
+						}
+					else if(F2==1){
+						printf("你和电脑打平了\n");goto a;
+						}
+					else {
+						printf("你输了!\n");goto a;
+						}
+					
+				}
+
+				else if (F1==2) 
+				{
+					{printf("你出的是布\n");
+					count+=1;}
+					if(F2==0){				//电脑出剪刀					
+						printf("你输了!\n");goto a;
+						}
+					else if(F2==1){
+						printf("你赢了!\n");
+						score1+=1;goto a;
+						}
+					else {
+						printf("你和电脑打平了\n");goto a;
+						}
+				}
+				else
+					printf("你输入错误,请重新输入\n");goto a;
+
+					
+
+			
+			}
+								
+			}/////
+		}////
+			}//((
+		
+				else {
+						{
+						if (score1>score2)
+							printf("恭喜你赢得本轮游戏！\n");
+						else
+						printf("很遗憾你输了本轮游戏！\n");
+						}	
+					score2=count-score1;
+					printf("共游戏%d局\n",count);
+					printf("你得分：%d，电脑得分：%d\n",score1,score2);						//宣布结果
+					printf("请输入你的姓名\n");
+					gets (chengji[j].name);													//记录玩家信息
+					int chengji[j].defen=score1;
+					printf("---------------------------------------\");
+					
+					}	
+	}///
+}//
